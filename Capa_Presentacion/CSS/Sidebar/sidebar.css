@@ -10,7 +10,14 @@ body {
     display: flex;
     min-height: 100vh;
 }
-
+.sidebar.oculto {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+}
+.sidebar.oculto ~ .contenido-principal {
+    margin-left: 0;
+}
 .sidebar {
     width: 250px;
     background: linear-gradient(135deg, #0f1b30 0%, #1a365d 100%);

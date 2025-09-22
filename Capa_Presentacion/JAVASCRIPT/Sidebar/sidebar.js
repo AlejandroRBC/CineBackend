@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.sidebar-menu a');
+    const sidebar = document.querySelector('.sidebar');
+    const toggleBtn = document.getElementById('toggleSidebar');
+
+    toggleBtn.addEventListener('click', () => {
+        sidebar.classList.toggle('oculto');
+    });
     menuItems.forEach(item => {
         item.addEventListener('click', function() {
             // Remover clase seleccion_activa de todos los items

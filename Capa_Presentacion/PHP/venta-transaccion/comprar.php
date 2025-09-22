@@ -39,7 +39,12 @@
                     <td><?= $p['fecha_lanzamiento'] ?></td>
                     <td><?= $p['clasificacion'] ?></td>
                     <td><?= $p['sonido'] ?></td>
-                    <td><button>Agregar Al carrito</button></td>
+                    <td><button type="button"
+                        data-tipo="pelicula"
+                        data-id="<?= $p['idPelicula'] ?>"
+                        data-nombre="<?= $p['nom_pel'] ?>"
+                        data-precio="35">Agregar Al carrito</button>
+                    </td>
                 </tr>
             <?php endwhile; ?>
         </table>
@@ -59,15 +64,32 @@
                     <td><?= $pr['nombre'] ?></td>
                     <td><?= $pr['precio'] ?></td>
                     <td><?= $pr['descripcion'] ?></td>
-                    <td><button>Agregar Al carrito</button></td>
+                    <td><button type="button"
+                            data-tipo="producto"
+                            data-id="<?= $pr['idProducto'] ?>"
+                            data-nombre="<?= $pr['nombre'] ?>"
+                            data-precio="<?= $pr['precio'] ?>">Agregar Al carrito</button>
+                    </td>
+
                 </tr>
             <?php endwhile; ?>
         </table>
     </div>
     <div class="contenido-cuerpo">
-        <h3>Terminemos la compra</h3>
-        
-        <h4>Boletos</h4>
+        <h3>Carrito</h3>
+    <form method="POST" action="../../../Capa_Negocio/Modulo-Venta-Transaccion/procesar_compra.php">
+        <table id="tabla-carrito" >
+            <tr>
+                <th>Tipo</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Asiento (solo películas)</th>
+                <th>Acción</th>
+            </tr>
+        </table>
+        <button type="submit" name="finalizar">Finalizar Compra</button>
+    </form>
 
     </div>
 </div>
