@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sidebar Cine</title>
-    <link rel="stylesheet" href="sidebar.css">
-</head>
-<body>
+
+
     <div class="sidebar">
         <div class="sidebar-cabeza">
             <h2><span>CineMax</span></h2>
         </div>
-        
+
         <ul class="sidebar-menu">
-            <li><a href="index.php" class="seleccion_activa"><i>🏠</i><span>Inicio</span></a></li>
+            <li><a href="<?= BASE_URL ?>index.php" class="seleccion_activa"><i>🏠</i><span>Inicio</span></a></li>
             <li><a href="#"><i>🏢</i><span>Escoge tu sucursal</span></a></li>
             <li><a href="#"><i>👤</i><span>Registrarse</span></a></li>
             <li><a href="#"><i>🚪</i><span>Iniciar Sesión</span></a></li>
             <li><a href="#"><i>⭐</i><span>Ver mis puntos</span></a></li>
-            <li><a href="../venta-transaccion/comprar.php"><i>🎟️</i><span>Comprar Boletos</span></a></li>
+            <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/venta-transaccion/comprar.php"><i>🎟️</i><span>Comprar Boletos</span></a></li>
             <li><a href="#"><i>🎁</i><span>Promociones del día</span></a></li>
-            <li><a href="../Administracion/Sesion.php"><i>🔐</i><span>Administrador</span></a></li>
+            <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Administracion/Sesion.php"><i>🔐</i><span>Administrador</span></a></li>
+            
         </ul>
     </div>
     <!-- ESTE SOLO ES UN EJEMPLO PARA REPLICAR EN LAS DEMAS PAGINAS  -->
@@ -36,6 +30,3 @@
             <code>include('sidebar.html');</code>
         </div>
     </div> -->
-    <script src="sidebar.js"></script>
-</body>
-</html>

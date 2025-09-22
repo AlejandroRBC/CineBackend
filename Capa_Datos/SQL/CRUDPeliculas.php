@@ -1,5 +1,6 @@
 <?php
-    include "../conexionBd/conexion.php";
+    include "../conexionBD/conexion.php";
+
     function ListarPeliculas($conexion){
         $sql = "SELECT * FROM pelicula";
         return $conexion->query($sql);
