@@ -47,6 +47,5 @@ $mantenimientos = Listar($conexion);
 </tr>
 <?php endwhile; ?>
 </table>
-
 </body>
 </html>
