@@ -1,0 +1,19 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background: #eee;
+}
+
+h2, h3 { text-align: center; }
+
+input, select, button {
+    padding: 5px;
+    margin: 3px 0;
+}
+
+table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+table, th, td { border: 1px solid #ccc; }
+th, td { padding: 5px; text-align: center; }
+
+button { cursor: pointer; }
+.error { color: red; text-align: center; }
