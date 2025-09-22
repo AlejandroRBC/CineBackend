@@ -16,6 +16,7 @@
         
     </ul>
 </div>
+<h2 id="toggleSidebar_2"><span>CineMax</span></h2>
 
 <!-- ESTE SOLO ES UN EJEMPLO PARA REPLICAR EN LAS DEMAS PAGINAS  -->
 <!-- <div class="contenido-principal">

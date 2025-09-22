@@ -18,11 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             carrito.push(item);
-            renderCarrito();
+            cargarCarrito();
         }
     });
 
-    function renderCarrito(){
+    function cargarCarrito(){
         // Borrar filas anteriores (menos encabezado)
         tabla.querySelectorAll("tr:not(:first-child)").forEach(tr => tr.remove());
 
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ? `<input type="text" name="items[${index}][asiento]" placeholder="Fila-Columna">` 
                         : "-"}
                 </td>
-                <td><button type="button" onclick="eliminarItem(${index})">❌</button></td>
+                <td><button type="button" onclick="eliminarItem(${index})">elmiminar</button></td>
                 <input type="hidden" name="items[${index}][tipo]" value="${item.tipo}">
                 <input type="hidden" name="items[${index}][id]" value="${item.id}">
                 <input type="hidden" name="items[${index}][nombre]" value="${item.nombre}">
@@ -52,6 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.eliminarItem = (i) => {
         carrito.splice(i, 1);
-        renderCarrito();
+        cargarCarrito();
     };
 });

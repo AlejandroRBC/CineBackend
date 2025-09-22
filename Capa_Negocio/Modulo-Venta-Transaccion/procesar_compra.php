@@ -23,7 +23,7 @@ if(isset($_POST['finalizar']) && isset($_POST['items'])){
         if($it['tipo'] === "pelicula"){
             $stmt = $conexion->prepare("INSERT INTO Detalle_venta (idVenta, idPelicula, idButaca, nro_Sala, subtotal) VALUES (?, ?, ?, ?, ?)");
             $idButaca = null; // mapear asiento real
-            $nro_Sala = 1;    // demo
+            $nro_Sala = 1;    // temporal
             $subtotal = $it['precio'] * $it['cantidad'];
             $stmt->bind_param("iiisd", $idVenta, $it['id'], $idButaca, $nro_Sala, $subtotal);
             $stmt->execute();
@@ -36,5 +36,6 @@ if(isset($_POST['finalizar']) && isset($_POST['items'])){
     }
 
     echo "Compra registrada con éxito. ID venta: " . $idVenta;
+
 }
 ?>

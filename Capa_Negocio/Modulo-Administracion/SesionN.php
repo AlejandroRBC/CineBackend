@@ -42,7 +42,8 @@ function LogicaS($conexion){
                         header("Location: Mantenimiento_Salas.php");
                         exit();
                     default:
-                        $mensaje = "Puesto no reconocido";
+                        header("Location: Pelicula.php");
+                        exit();
                 }
             } else {
                 $mensaje = "Usuario o contraseña incorrectos";

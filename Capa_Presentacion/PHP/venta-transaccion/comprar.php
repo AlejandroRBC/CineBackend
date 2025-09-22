@@ -9,12 +9,8 @@
     include_once __DIR__ . "/../../../Capa_Datos/conexionBD/conexion.php";
     include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDPeliculas.php";
     include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDProductos.php";
-
-    // 
     $peliculas = ListarPeliculasHabilitadas($conexion);
     $productos = ListarProductosDisponibles($conexion);
-
-
  ?>
 <div class="contenido-principal">
     <div class="content-cabeza">
@@ -85,7 +81,7 @@
                 <th>Precio</th>
                 <th>Cantidad</th>
                 <th>Asiento (solo películas)</th>
-                <th>Acción</th>
+                <th></th>
             </tr>
         </table>
         <button type="submit" name="finalizar">Finalizar Compra</button>
