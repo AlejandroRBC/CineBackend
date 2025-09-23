@@ -1,9 +1,20 @@
 <?php
 include_once __DIR__ . "/../../Capa_Datos/conexionBD/conexion.php";
 
+if(session_status() === PHP_SESSION_NONE){
+    session_start();
+}
+
+if(isset($_SESSION['usuario']));
+
+
 if(isset($_POST['finalizar']) && isset($_POST['items'])){
     $items = $_POST['items'];
-    $idUsuario = 1; 
+    if(isset($_SESSION['usuario'])){
+        $idUsuario = $_SESSION['usuario']['id']; 
+    }else{
+        $idUsuario = 123; 
+    }
     $total = 0;
 
     foreach($items as $it){
@@ -13,7 +24,8 @@ if(isset($_POST['finalizar']) && isset($_POST['items'])){
     
     $stmt = $conexion->prepare(
         "INSERT INTO VENTA (idUsuario, total, tipo_pago, fecha) VALUES (?, ?, ?, NOW())");
-    $tipo_pago = "Efectivo";
+    $tipo_pago = $_POST['metodoPago'];
+
     $stmt->bind_param("ids", $idUsuario, $total, $tipo_pago);
     $stmt->execute();
     $idVenta = $stmt->insert_id;
