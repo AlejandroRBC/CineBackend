@@ -2,11 +2,15 @@
 <link rel="stylesheet" href="../../CSS/Venta-Transaccion/tablas.css">
 <link rel="stylesheet" href="../../CSS/Venta-Transaccion/botones.css">
 <link rel="stylesheet" href="../../CSS/Venta-Transaccion/footer.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/QR.css">
 <script src="../../JAVASCRIPT/Sidebar/sidebar.js"></script>
 <script src="../../JAVASCRIPT/venta-transaccion/carrito.js"></script>
 
 <?php
     define("BASE_URL", "/CineBackend/"); 
+    $base_url = '/CineBackend/';
+    $imagenes_path = $base_url . 'Capa_Presentacion/IMAGEN/';
+    $iconos_path = $imagenes_path . 'iconos/';
     include('../../PHP/Sidebar/sidebar.php');
     include_once __DIR__ . "/../../../Capa_Datos/conexionBD/conexion.php";
     include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDPeliculas.php";
@@ -76,29 +80,41 @@
     </div>
     <div class="contenido-cuerpo">
         <h3>Carrito</h3>
-    <form method="POST" action="../../../Capa_Negocio/Modulo-Venta-Transaccion/procesar_compra.php">
-        <table id="tabla-carrito" >
-            <tr>
-                <th>Tipo</th>
-                <th>Nombre</th>
-                <th>Precio</th>
-                <th>Cantidad</th>
-                <th>Asiento (solo películas)</th>
-                <th></th>
-            </tr>
-        </table>
+        <form method="POST" action="../../../Capa_Negocio/Modulo-Venta-Transaccion/procesar_compra.php">
+            <table id="tabla-carrito" >
+                <tr>
+                    <th>Tipo</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Asiento (solo películas)</th>
+                    <th></th>
+                </tr>
+            </table>
 
-        <div class="modalPago" id="modalPago">
-            <select required name="metodoPago" id="metodoPago">
-                <option value="" disabled selected>Metodo de Pago</option>
-                <option value="QR">Q.R.</option>
-                <option value="Efectivo">Efectivo</option>
-                <option value="Transferencia">Transferencia</option>
-            </select>
+            <div class="modalPago" id="modalPago">
+                <select required name="metodoPago" id="metodoPago">
+                    <option value="" disabled selected>Metodo de Pago</option>
+                    <option value="QR">Q.R.</option>
+                    <option value="Efectivo">Efectivo</option>
+                    <option value="Transferencia">Transferencia</option>
+                </select>
+                <select required name="Sucursales" id="sucursales">
+                    <option value="" disabled selected>Sucursal de compra</option>
+                    <option value="#">El Alto</option>
+                    <option value="#">La Paz</option>
+                    <option value="#">Senkata Houston</option>
+                </select>
+            </div>
+            <button type="submit" name="finalizar">Finalizar Compra</button>
+        </form>
+        <div class="ocultarQR" id="QR">
+                <img src="<?= $iconos_path ?>QR.png" style="height: 300px;">
         </div>
-        <button type="submit" name="finalizar">Finalizar Compra</button>
-    </form>
     </div>
+
+
+
     <div class="contenido-cuerpo">
         <?php include('../../HTML/Venta-Transaccion/footer.html'); ?>
     </div>

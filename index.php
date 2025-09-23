@@ -34,8 +34,8 @@
                         </p> 
                     </div> 
                     <div class="acciones">
-                            <button type="button" onclick="Hola()" class="Enter">Informacion</button> 
-                            <button type="button" onclick="verResenas(<?= $p['idPelicula'] ?>)" class="Enter2">Reseñas</button>
+                            
+                            <button type="button" onclick="verResenas(<?= $p['idPelicula'] ?>)" class="Enter">Reseñas</button>
                     </div> 
                 </div> 
             </div>
