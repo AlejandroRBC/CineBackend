@@ -31,7 +31,6 @@
                         <p class="descripcion">
                             <strong>Categoría</strong> <?= $p['categoria'] ?>
                         </p> 
-    
                     </div> 
                     <div class="acciones">
                             <button type="button" onclick="Hola()" class="Enter">Informacion</button> 
