@@ -69,20 +69,21 @@ function LogicaGC($conexion){
     }
 
     if(isset($_POST['modificarPelicula'])){
-        $id = $_POST['idPelicula'] ?? 0;
-        $nom_pel = $_POST['nom_pel'] ?? '';
-        $lenguaje = $_POST['lenguaje'] ?? '';
-        $formato = $_POST['formato'] ?? '';
-        $categoria = $_POST['categoria'] ?? '';
-        $fecha_lanzamiento = $_POST['fecha_lanzamiento'] ?? '';
-        $clasificacion = $_POST['clasificacion'] ?? '';
-        $sonido = $_POST['sonido'] ?? '';
-        $estado = $_POST['estado'] ?? 'En proyección';
+    $id = $_POST['idPelicula'] ?? 0;
+    $nom_pel = $_POST['nom_pel'] ?? '';
+    $lenguaje = $_POST['lenguaje'] ?? '';
+    $formato = $_POST['formato'] ?? '';
+    $categoria = $_POST['categoria'] ?? '';
+    $fecha_lanzamiento = $_POST['fecha_lanzamiento'] ?? '';
+    $clasificacion = $_POST['clasificacion'] ?? '';
+    $sonido = $_POST['sonido'] ?? '';
+    $estado = $_POST['estado'] ?? 'En proyección';
 
-        if($id && $nom_pel && $formato){
-            ModificarPr($conexion, $id, $nom_pel, $lenguaje, $formato, $categoria, $fecha_lanzamiento, $clasificacion, $sonido, $estado);
-        }
+    if($id && $nom_pel && $formato){
+        ModificarP($conexion, $id, $nom_pel, $lenguaje, $formato, $categoria, $fecha_lanzamiento, $clasificacion, $sonido, $estado);
     }
+}
+
 
     if(isset($_POST['agregarProyeccion'])){
         $idPelicula = $_POST['idPelicula'] ?? 0;
@@ -96,16 +97,17 @@ function LogicaGC($conexion){
     }
 
     if(isset($_POST['modificarProyeccion'])){
-        $id = $_POST['idProyeccion'] ?? 0;
-        $idPelicula = $_POST['idPelicula'] ?? 0;
-        $nro_Sala = $_POST['nro_Sala'] ?? 0;
-        $fecha = $_POST['fecha'] ?? '';
-        $hora = $_POST['hora'] ?? '';
+    $id = $_POST['idProyeccion'] ?? 0;
+    $idPelicula = $_POST['idPelicula'] ?? 0;
+    $nro_Sala = $_POST['nro_Sala'] ?? 0;
+    $fecha = $_POST['fecha'] ?? '';
+    $hora = $_POST['hora'] ?? '';
 
-        if($id && $idPelicula && $nro_Sala && $fecha && $hora){
-            ModificarPr($conexion, $id, $idPelicula, $nro_Sala, $fecha, $hora);
-        }
+    if($id && $idPelicula && $nro_Sala && $fecha && $hora){
+        ModificarPr($conexion, $id, $idPelicula, $nro_Sala, $fecha, $hora);
     }
+}
+
 
     if(isset($_POST['eliminarProyeccion'])){
         $id = $_POST['idProyeccion'] ?? 0;

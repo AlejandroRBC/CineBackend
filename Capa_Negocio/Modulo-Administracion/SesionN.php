@@ -38,7 +38,7 @@ function LogicaS($conexion){
                     case 'Gestion Comercial':
                         header("Location: Pelicula.php");
                         exit();
-                    case 'Gestion de Salas':
+                    case 'Gestion Salas':
                         header("Location: Mantenimiento_Salas.php");
                         exit();
                     case 'Gestion Usuario':
