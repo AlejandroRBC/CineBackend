@@ -43,20 +43,18 @@ function mostrarPeliculas($resultado, $terminoBusqueda = '') {
             }
             
             echo '
-            <div class="pelicula-card" onclick="seleccionarPelicula(' . $pelicula['idPelicula'] . ')">
-                <div class="pelicula-imagen">
-                </div>
-                <div class="pelicula-content">
-                    <div class="pelicula-titulo">' . $titulo . '</div>
+            <div class="card" onclick="seleccionarPelicula(' . $pelicula['idPelicula'] . ')">
+                <div class="content">
+                    <div class="titulo">' . $titulo . '</div>
                     
-                    <div class="pelicula-info">
+                    <div class="descripcion">
                         <span>Idioma:</span>
                         <span>' . $lenguaje . '</span>
                     </div>
                     
-                    <div class="pelicula-info">
+                    <div class="descripcion">
                         <span>Formato:</span>
-                        <span class="pelicula-etiqueta pelicula-formato">' . $formato . '</span>
+                        <span class="descripcion">' . $formato . '</span>
                     </div>
                     
                     <div style="display: flex; gap: 5px; margin-top: 10px; flex-wrap: wrap;">
@@ -66,6 +64,15 @@ function mostrarPeliculas($resultado, $terminoBusqueda = '') {
                 </div>
             </div>';
         }
+
+       
+
+
+
+
+
+
+
         
         echo '</div>';
         

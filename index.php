@@ -48,15 +48,8 @@
             <!-- Contador de resultados -->
             <div id="contadorResultados" class="resultados-info"></div>
         </div>
-        <!-- Resultados de Búsqueda -->
-        <div id="resultadosPeliculas">
-            <!-- Las películas se cargarán aquí via JavaScript -->
-        </div>
 
-
-        <div class="contenido-Cuerpo">
-
-        </div>
+        <!--******************************************ESTO SI DA -->
         <div class="cartelera">
         <?php while($p = $peliculas->fetch_assoc()): ?>
             <div class="card"> 
@@ -82,6 +75,8 @@
         <?php endwhile; ?>    
         </div>
     </div>
+    <!--******************************************ESTO SI DA -->
+
     <div class="contenido-cuerpo">
         <?php include('Capa_Presentacion/HTML/Venta-Transaccion/footer.html'); ?>
     </div>

@@ -49,7 +49,7 @@ class BuscadorPeliculas {
             const formData = new FormData();
             formData.append('termino', termino);
             formData.append('accion', 'buscar');
-            const response = await fetch('Capa_Presentacion/PHP/ModuloCartelera/buscador.php', {
+            const response = await fetch('Capa_Negocio/Modulo-Cartelera/buscador.php', {
                 method: 'POST',
                 body: formData
             });
@@ -70,7 +70,7 @@ class BuscadorPeliculas {
     
     async cargarPeliculasIniciales() {
         try {
-            const response = await fetch('Capa_Presentacion/PHP/ModuloCartelera/buscador.php?accion=inicial');
+            const response = await fetch('Capa_Negocio/Modulo-cartelera/buscador.php?accion=inicial');
             const data = await response.text();
             document.getElementById('resultadosPeliculas').innerHTML = data;
             
