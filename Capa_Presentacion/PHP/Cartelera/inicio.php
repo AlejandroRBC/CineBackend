@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="../../CSS/Sidebar/sidebar.css">
-<link rel="stylesheet" href="../../CSS/Tablas/tablas.css">
-<link rel="stylesheet" href="../../CSS/botones.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/tablas.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/botones.css">
 <script src="../../JAVASCRIPT/Sidebar/sidebar.js"></script>
 
 <?php

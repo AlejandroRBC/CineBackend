@@ -35,15 +35,17 @@ function LogicaS($conexion){
                     case 'Recursos Humanos':
                         header("Location: Personal.php");
                         exit();
-                    case 'Gestión Comercial':
+                    case 'Gestion Comercial':
                         header("Location: Pelicula.php");
                         exit();
-                    case 'Gestión de Salas':
+                    case 'Gestion de Salas':
                         header("Location: Mantenimiento_Salas.php");
                         exit();
-                    default:
-                        header("Location: Pelicula.php");
+                    case 'Gestion Usuario':
+                        header("Location: Usuario.php");
                         exit();
+                    default:
+                        $mensaje = "Puesto no reconocido";
                 }
             } else {
                 $mensaje = "Usuario o contraseña incorrectos";

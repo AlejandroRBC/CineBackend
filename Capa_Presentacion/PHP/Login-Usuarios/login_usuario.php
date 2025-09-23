@@ -27,7 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'puntos' => $usuario['puntos']
             ];
             
-            // Inicializar carrito vacío
             $_SESSION['carrito'] = [
                 'boletos' => [],
                 'productos' => [],
