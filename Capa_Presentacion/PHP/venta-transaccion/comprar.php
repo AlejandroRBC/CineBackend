@@ -18,6 +18,7 @@
     <div class="content-cabeza">
         <h1>Compra de Boletos</h1>
         <p>Elige la película, algo del candybar y termina la compra</p>
+        
     </div>
     <div class="contenido-cuerpo">
         <h4>Escoge la película</h4>
