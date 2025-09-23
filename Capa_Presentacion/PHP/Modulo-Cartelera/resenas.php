@@ -2,13 +2,9 @@
 if(session_status() === PHP_SESSION_NONE){
     session_start();
 }
-include_once __DIR__ . "/../../../Capa_Negocio/Modulo-Cartelera/ResenasN.php";
-
-// Obtener datos
-$conexion = include __DIR__ . "/../../../Capa_Datos/conexionBD/conexion.php";
+include "../../../Capa_Negocio/Modulo-cartelera/ResenasN.php";
+include_once __DIR__ . "/../../../Capa_Datos/conexionBD/conexion.php";
 $data = LogicaResenas($conexion);
-
-// Si no se proporcionó ID de película, redirigir al inicio
 if (!$data['pelicula']) {
     header("Location: ../../../index.php");
     exit();
@@ -28,7 +24,8 @@ if (!$data['pelicula']) {
 <body>
     <?php
     define("BASE_URL", "/CineBackend/");
-    include('../../HTML/Sidebar/sidebar.php');
+    
+    include('../../PHP/Sidebar/sidebar.php');
     ?>
 
     <div class="contenido-principal">
@@ -43,21 +40,10 @@ if (!$data['pelicula']) {
                     <div class="calificacion-promedio">
                         <strong>Calificación promedio:</strong>
                         <div class="estrellas">
-                            <?php
-                            $promedio = round($data['promedio']['promedio'], 1);
-                            $estrellasLlenas = floor($promedio);
-                            $mediaEstrella = $promedio - $estrellasLlenas >= 0.5;
-                            ?>
                             
-                            <?php for ($i = 1; $i <= 5; $i++): ?>
-                                <?php if ($i <= $estrellasLlenas): ?>
-                                    <span class="estrella llena">★</span>
-                                <?php elseif ($mediaEstrella && $i == $estrellasLlenas + 1): ?>
-                                    <span class="estrella media">★</span>
-                                <?php else: ?>
-                                    <span class="estrella vacia">★</span>
-                                <?php endif; ?>
-                            <?php endfor; ?>
+                            <?php
+                                $promedio = round($data['promedio']['promedio'], 1);
+                            ?>
                             
                             <span class="puntuacion">(<?= $promedio ?>/5 - <?= $data['promedio']['total'] ?> reseñas)</span>
                         </div>
@@ -88,8 +74,8 @@ if (!$data['pelicula']) {
                             <div class="comentario-input">
                                 <label for="comentario">Comentario:</label>
                                 <textarea name="comentario" id="comentario" rows="4" 
-                                          placeholder="Escribe tu opinión sobre la película..." 
-                                          required></textarea>
+                                        placeholder="Escribe tu opinión sobre la película..." 
+                                        required></textarea>
                             </div>
                             
                             <button type="submit" name="agregar_resena" class="btn-enviar">Enviar Reseña</button>
@@ -123,11 +109,11 @@ if (!$data['pelicula']) {
                             <div class="resena-header">
                                 <div class="usuario-info">
                                     <strong><?= htmlspecialchars($resena['nombre'] ?: $resena['nom_usu']) ?></strong>
-                                    <span class="fecha"><?= date('d/m/Y H:i', strtotime($resena['fecha_creacion'])) ?></span>
+                                    
                                 </div>
                                 <div class="calificacion-resena">
                                     <?php for ($i = 1; $i <= 5; $i++): ?>
-                                        <span class="estrella <?= $i <= $resena['calificacion'] ? 'llena' : 'vacia' ?>">★</span>
+                                        <span class="estrella <?= $i <= $resena['puntuacion'] ? 'llena' : 'vacia' ?>">★</span>
                                     <?php endfor; ?>
                                 </div>
                             </div>

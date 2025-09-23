@@ -35,7 +35,7 @@ if(isset($_POST['finalizar']) && isset($_POST['items'])){
         }
     }
 
-    echo "Compra registrada con éxito. ID venta: " . $idVenta;
-
+    echo "FACTURA " . $idVenta;
 }
 ?>
+
