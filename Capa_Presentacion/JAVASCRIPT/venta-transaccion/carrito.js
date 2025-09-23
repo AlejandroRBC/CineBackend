@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const carrito = [];
     const tabla = document.getElementById("tabla-carrito");
 
-    // Delegación: escuchar clicks en botones "Agregar al carrito"
+    //  escuchar a Agregar al carrito
     document.body.addEventListener("click", e => {
         if(e.target.tagName === "BUTTON" && e.target.dataset.tipo){
             const tipo = e.target.dataset.tipo;

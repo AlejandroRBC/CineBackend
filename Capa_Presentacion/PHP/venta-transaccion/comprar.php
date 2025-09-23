@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="../../CSS/Sidebar/sidebar.css">
 <link rel="stylesheet" href="../../CSS/Tablas/tablas.css">
+<link rel="stylesheet" href="../../CSS/botones.css">
 <script src="../../JAVASCRIPT/Sidebar/sidebar.js"></script>
 <script src="../../JAVASCRIPT/venta-transaccion/carrito.js"></script>
 
@@ -11,7 +12,7 @@
     include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDProductos.php";
     $peliculas = ListarPeliculasHabilitadas($conexion);
     $productos = ListarProductosDisponibles($conexion);
- ?>
+?>
 <div class="contenido-principal">
     <div class="content-cabeza">
         <h1>Compra de Boletos</h1>
@@ -84,8 +85,17 @@
                 <th></th>
             </tr>
         </table>
+
+        <div class="modalPago" id="modalPago">
+            <select required name="metodoPago" id="metodoPago">
+                <option value="" disabled selected>Metodo de Pago</option>
+                <option value="QR">Q.R.</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>
+        </div>
         <button type="submit" name="finalizar">Finalizar Compra</button>
     </form>
-
     </div>
+
 </div>
