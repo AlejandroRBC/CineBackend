@@ -9,6 +9,15 @@
 <div class="sidebar">
     <div class="sidebar-cabeza">
         <h2 id="toggleSidebar"><span>CineMax</span></h2>
+        asdfas
+        <?php if(isset($_SESSION['usuario'])): ?>
+            <div>
+                Hola, <?php echo $_SESSION['usuario']['nombre']; ?>
+                <br>
+                <small>Puntos: <?php echo $_SESSION['usuario']['puntos']; ?></small>
+            </div>
+        <?php endif; ?>
+        123123
         
     </div>
     <ul class="sidebar-menu">
@@ -16,7 +25,6 @@
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Login-Usuarios/registro_usuario.php"><i ><img class="ColorImg"  src="<?= $iconos_path ?>ingresar.png" height="20px"></i><span>Registrarse</span></a></li>
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Login-Usuarios/login_usuario.php"><i><img class="ColorImg"  src="<?= $iconos_path ?>usuario.png" height="20px"></i><span>Iniciar Sesión</span></a></li>
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/venta-transaccion/comprar.php"><i><img   src="<?= $iconos_path ?>Boleto.png" height="20px"></i><span>Comprar Boletos</span></a></li>
-        <li><a href="#"><i><img class="ColorImg"  src="<?= $iconos_path ?>promocion.png" height="20px"></i><span>Promociones del día</span></a></li>
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Administracion/Sesion.php"><i><img class="ColorImg"  src="<?= $iconos_path ?>admin.png" height="20px"></i><span>Administrador</span></a></li>
         
     </ul>
