@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/../conexionBD/conexion.php";
+include __DIR__ . "../../../Capa_Datos/conexionBD/conexion.php";
 
 function ListarProductosDisponibles($conexion){
     $sql = "SELECT * FROM productos WHERE stock>0 AND activo like 'Activo'";
@@ -29,4 +29,5 @@ function VerificarStock($conexion, $idProducto, $cantidad){
     $resultado = $stmt->get_result();
     return $resultado->num_rows > 0;
 }
+
 ?>

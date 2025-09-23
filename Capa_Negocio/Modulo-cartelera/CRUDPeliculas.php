@@ -1,9 +1,10 @@
 <?php
-    include __DIR__ . "/../conexionBD/conexion.php";
+    include __DIR__ . "../../../Capa_Datos/conexionBD/conexion.php";
     function ListarPeliculasHabilitadas($conexion){
         $sql = "SELECT * FROM pelicula  WHERE estado like 'EN_PROYECCION'";
         return $conexion->query($sql);
     }
+    
 
 function ListarProximosEstrenos($conexion, $limite = 5) {
     $sql = "SELECT idPelicula, nom_pel, fecha_lanzamiento, formato, categoria

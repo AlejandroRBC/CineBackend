@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     stars.forEach((star, index) => {
         star.addEventListener('click', function() {
-            // Marcar la estrella clickeada y todas las anteriores
+
             stars.forEach((s, i) => {
                 if (i <= index) {
                     s.classList.add('seleccionada');
@@ -11,8 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     s.classList.remove('seleccionada');
                 }
             });
-            
-            // Actualizar el valor del radio button
+
             document.querySelectorAll('input[name="calificacion"]').forEach((radio, i) => {
                 radio.checked = (i === index);
             });

@@ -14,7 +14,7 @@
 
 
 
-/* Soporte Técnico - Estilo destacado */
+
 .soporte-destacado {
     background: rgba(49, 130, 206, 0.1);
     border: 2px solid #3182ce;
@@ -44,23 +44,3 @@
 
 
 
-@keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.7; }
-    100% { opacity: 1; }
-}
-
-@media screen and (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .numero-soporte {
-        font-size: 1.5rem;
-    }
-    
-    .soporte-destacado {
-        text-align: center;
-    }
-}
