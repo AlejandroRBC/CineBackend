@@ -1,14 +1,22 @@
+<?php
+
+    $base_url = '/CineBackend/';
+    $imagenes_path = $base_url . 'Capa_Presentacion/IMAGEN/';
+    $iconos_path = $imagenes_path . 'iconos/';
+?>
+
+
 <div class="sidebar">
     <div class="sidebar-cabeza">
         <h2 id="toggleSidebar"><span>CineMax</span></h2>
     </div>
     <ul class="sidebar-menu">
-        <li><a href="<?= BASE_URL ?>index.php" class="seleccion_activa"><i>🏠</i><span>Inicio</span></a></li>
-        <li><a href="#"><i>👤</i><span>Registrarse</span></a></li>
-        <li><a href="#"><i>🚪</i><span>Iniciar Sesión</span></a></li>
-        <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/venta-transaccion/comprar.php"><i>🎟️</i><span>Comprar Boletos</span></a></li>
-        <li><a href="#"><i>🎁</i><span>Promociones del día</span></a></li>
-        <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Administracion/Sesion.php"><i>🔐</i><span>Administrador</span></a></li>
+        <li><a href="<?= BASE_URL ?>index.php" class="seleccion_activa"><i><img class="ColorImg"  src="<?= $iconos_path ?>inicio.png" height="20px"></i><span>Inicio</span></a></li>
+        <li><a href="#"><i ><img class="ColorImg"  src="<?= $iconos_path ?>ingresar.png" height="20px"></i><span>Registrarse</span></a></li>
+        <li><a href="#"><i><img class="ColorImg"  src="<?= $iconos_path ?>usuario.png" height="20px"></i><span>Iniciar Sesión</span></a></li>
+        <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/venta-transaccion/comprar.php"><i><img   src="<?= $iconos_path ?>Boleto.png" height="20px"></i><span>Comprar Boletos</span></a></li>
+        <li><a href="#"><i><img class="ColorImg"  src="<?= $iconos_path ?>promocion.png" height="20px"></i><span>Promociones del día</span></a></li>
+        <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Administracion/Sesion.php"><i><img class="ColorImg"  src="<?= $iconos_path ?>admin.png" height="20px"></i><span>Administrador</span></a></li>
         
     </ul>
 </div>
