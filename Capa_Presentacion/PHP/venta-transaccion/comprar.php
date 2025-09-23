@@ -3,6 +3,7 @@
 <link rel="stylesheet" href="../../CSS/Venta-Transaccion/botones.css">
 <link rel="stylesheet" href="../../CSS/Venta-Transaccion/footer.css">
 <link rel="stylesheet" href="../../CSS/Venta-Transaccion/QR.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/butacas.css">
 <script src="../../JAVASCRIPT/Sidebar/sidebar.js"></script>
 <script src="../../JAVASCRIPT/venta-transaccion/carrito.js"></script>
 
@@ -17,6 +18,16 @@
     include_once __DIR__ . "/../../../Capa_Negocio/Modulo-cartelera/CRUDProductos.php";
     $peliculas = ListarPeliculasHabilitadas($conexion);
     $productos = ListarProductosDisponibles($conexion);
+    $peliculas = ListarPeliculasHabilitadas($conexion);
+    $productos = ListarProductosDisponibles($conexion);
+
+    $sqlButacas = "SELECT b.idButaca, b.nro_Fila, b.nro_Col, b.estado 
+                   FROM BUTACA b
+                   INNER JOIN Tiene t ON b.idButaca = t.idButaca
+                   WHERE t.nro_Sala = 1";
+    $butacas = $conexion->query($sqlButacas);
+?>
+
 ?>
 <div class="contenido-principal">
     <div class="content-cabeza">
@@ -78,6 +89,39 @@
             <?php endwhile; ?>
         </table>
     </div>
+    <div class="contenido-cuerpo">
+    <h4>Selecciona tu butaca</h4>
+    <table class="mapa-butacas">
+        <?php 
+        $fila_actual = null;
+        while($b = $butacas->fetch_assoc()):
+            if ($fila_actual !== $b['nro_Fila']) {
+                if ($fila_actual !== null) echo "</tr>";
+                echo "<tr><td>Fila ".$b['nro_Fila']."</td>";
+                $fila_actual = $b['nro_Fila'];
+            }
+        ?>
+            <td>
+                <?php if($b['estado'] == 'LIBRE'): ?>
+                    <button type="button" 
+                            class="butaca-libre" 
+                            data-tipo="butaca"
+                            data-id="<?= $b['idButaca'] ?>"
+                            data-nombre="Fila <?= $b['nro_Fila'] ?> - Col <?= $b['nro_Col'] ?>"
+                            data-precio="35">
+                        <?= $b['nro_Col'] ?>
+                    </button>
+                <?php else: ?>
+                    <button type="button" class="butaca-ocupada" disabled>
+                        X
+                    </button>
+                <?php endif; ?>
+            </td>
+        <?php endwhile; ?>
+        </tr>
+    </table>
+</div>
+
     <div class="contenido-cuerpo">
         <h3>Carrito</h3>
         <form method="POST" action="../../../Capa_Negocio/Modulo-Venta-Transaccion/procesar_compra.php">

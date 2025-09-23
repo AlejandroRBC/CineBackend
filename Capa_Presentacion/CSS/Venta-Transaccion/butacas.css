@@ -1,0 +1,21 @@
+.mapa-butacas td {
+    padding: 5px;
+    text-align: center;
+}
+
+.butaca-libre {
+    background: green;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.butaca-ocupada {
+    background: red;
+    color: white;
+    padding: 8px;
+    border: none;
+    border-radius: 5px;
+}
