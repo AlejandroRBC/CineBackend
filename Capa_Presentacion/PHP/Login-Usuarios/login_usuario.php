@@ -16,7 +16,7 @@
         
         <form method="POST">
             <input type="text" name="nom_usu" placeholder="Nombre de usuario" required>
-            <input type="password" name="password" placeholder="Contraseña (CI/NIT)" required>
+            <input type="password" name="password" placeholder="Contraseña" required>
             <button type="submit">Ingresar</button>
         </form>
         

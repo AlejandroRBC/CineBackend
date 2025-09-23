@@ -27,7 +27,6 @@
                     'puntos' => $usuario['puntos']
                 ];
                 
-                // Inicializar carrito vacío
                 $_SESSION['carrito'] = [
                     'boletos' => [],
                     'productos' => [],

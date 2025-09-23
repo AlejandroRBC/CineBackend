@@ -30,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'contrasena' => $_POST['contrasena'] ?? ''
     ];
     
-    // Validar que todos los campos estén completos
     if (array_filter($datos)) {
         if (registrarUsuario($conexion, $datos)) {
             header("Location: login_usuario.php?registro=exitoso");

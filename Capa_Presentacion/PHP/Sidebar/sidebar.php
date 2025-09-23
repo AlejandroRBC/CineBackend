@@ -27,6 +27,7 @@
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Login-Usuarios/registro_usuario.php"><i ><img class="ColorImg"  src="<?= $iconos_path ?>ingresar.png" height="20px"></i><span>Registrarse</span></a></li>
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Login-Usuarios/login_usuario.php"><i><img class="ColorImg"  src="<?= $iconos_path ?>usuario.png" height="20px"></i><span>Iniciar Sesión</span></a></li>
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/venta-transaccion/comprar.php"><i><img   src="<?= $iconos_path ?>Boleto.png" height="20px"></i><span>Compras</span></a></li>
+        <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Login-Usuarios/perfil.php"><span>Perfil</span></a></li>
         <li><a href="<?= BASE_URL ?>Capa_Presentacion/PHP/Administracion/Sesion.php"><i><img class="ColorImg"  src="<?= $iconos_path ?>admin.png" height="20px"></i><span>Administrador</span></a></li>
         
     </ul>
