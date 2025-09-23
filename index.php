@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="Capa_presentacion/CSS/Sidebar/sidebar.css">
 <link rel="stylesheet" href="Capa_presentacion/CSS/Inicio/card.css">
+<link rel="stylesheet" href="Capa_presentacion/CSS/Footer/footer.css">
 <script src="Capa_presentacion/JAVASCRIPT/Sidebar/sidebar.js"></script>
 <?php 
     define("BASE_URL", "/CineBackend/");
@@ -41,9 +42,7 @@
         <?php endwhile; ?>    
         </div>
     </div>
+    <div class="contenido-cuerpo">
+        <?php include('Capa_Presentacion/HTML/Footer/footer.php'); ?>
+    </div>
 </div>
-<script>
-    function Hola(){
-        console.log("Hola mundo");
-    }
-</script>

@@ -1,6 +1,7 @@
 <link rel="stylesheet" href="../../CSS/Sidebar/sidebar.css">
 <link rel="stylesheet" href="../../CSS/Tablas/tablas.css">
 <link rel="stylesheet" href="../../CSS/botones.css">
+<link rel="stylesheet" href="../../CSS/Footer/footer.css">
 <script src="../../JAVASCRIPT/Sidebar/sidebar.js"></script>
 <script src="../../JAVASCRIPT/venta-transaccion/carrito.js"></script>
 
@@ -96,6 +97,9 @@
         </div>
         <button type="submit" name="finalizar">Finalizar Compra</button>
     </form>
+    </div>
+    <div class="contenido-cuerpo">
+        <?php include('../../HTML/Footer/footer.php'); ?>
     </div>
 
 </div>

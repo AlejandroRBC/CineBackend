@@ -8,7 +8,6 @@ function verificarUsuario($conexion, $nom_usu, $password) {
     $stmt->bind_param("ss", $nom_usu, $password);
     $stmt->execute();
     $resultado = $stmt->get_result();
-    
     return $resultado->fetch_assoc();
 }
 
