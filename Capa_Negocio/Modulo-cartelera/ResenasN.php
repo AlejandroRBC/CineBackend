@@ -8,11 +8,9 @@ function LogicaResenas($conexion) {
         session_start();
     }
     $resultado = [];
-    
- 
+
     $idPelicula = $_GET['id'] ?? 0;
     $resultado['idPelicula'] = $idPelicula;
-    
 
     $sqlPelicula = "SELECT * FROM pelicula WHERE idPelicula = ?";
     $stmt = $conexion->prepare($sqlPelicula);
@@ -26,7 +24,7 @@ function LogicaResenas($conexion) {
 
     $resultado['promedio'] = ObtenerPromedioCalificacion($conexion, $idPelicula);
     
-
+ 
     if (isset($_SESSION['usuario'])) {
         $resultado['usuarioYaReseno'] = VerificarUsuarioYaReseno(
             $conexion, 
@@ -37,7 +35,7 @@ function LogicaResenas($conexion) {
         $resultado['usuarioYaReseno'] = false;
     }
     
-
+ 
     if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['agregar_resena'])) {
         if (!isset($_SESSION['usuario'])) {
             $resultado['error'] = "Debe iniciar sesión para agregar una reseña";

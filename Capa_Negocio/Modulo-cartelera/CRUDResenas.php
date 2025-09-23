@@ -3,7 +3,7 @@ include "../../../Capa_datos/conexionBD/conexion.php";
 
 function ListarResenasPorPelicula($conexion, $idPelicula) {
     $sql = "SELECT r.*, u.nom_usu, u.nombre 
-            FROM reseña r 
+            FROM resena r 
             JOIN USUARIO u ON r.idUsuario = u.idUsuario 
             WHERE r.idPelicula = ? ";
     $stmt = $conexion->prepare($sql);
@@ -13,7 +13,7 @@ function ListarResenasPorPelicula($conexion, $idPelicula) {
 }
 
 function AgregarResena($conexion, $idPelicula, $idUsuario, $puntuacion, $comentario) {
-    $sql = "INSERT INTO reseña (idPelicula, idUsuario, puntuacion, comentario) 
+    $sql = "INSERT INTO resena (idPelicula, idUsuario, puntuacion, comentario) 
             VALUES (?, ?, ?, ?)";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("iiis", $idPelicula, $idUsuario, $puntuacion, $comentario);
@@ -22,7 +22,7 @@ function AgregarResena($conexion, $idPelicula, $idUsuario, $puntuacion, $comenta
 
 function ObtenerPromedioCalificacion($conexion, $idPelicula) {
     $sql = "SELECT AVG(puntuacion) as promedio, COUNT(*) as total 
-            FROM reseña 
+            FROM resena 
             WHERE idPelicula = ?";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("i", $idPelicula);
@@ -32,7 +32,7 @@ function ObtenerPromedioCalificacion($conexion, $idPelicula) {
 
 function VerificarUsuarioYaReseno($conexion, $idPelicula, $idUsuario) {
     $sql = "SELECT COUNT(*) as total 
-            FROM reseña 
+            FROM resena 
             WHERE idPelicula = ? AND idUsuario = ? ";
     $stmt = $conexion->prepare($sql);
     $stmt->bind_param("ii", $idPelicula, $idUsuario);

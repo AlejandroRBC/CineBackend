@@ -55,7 +55,7 @@ if (!$data['pelicula']) {
         </div>
 
         <div class="contenido-cuerpo">
-            <!-- Formulario para agregar reseña -->
+
             <?php if (isset($_SESSION['usuario'])): ?>
                 <?php if (!$data['usuarioYaReseno']): ?>
                     <div class="agregar-resena">
@@ -92,14 +92,13 @@ if (!$data['pelicula']) {
                 </div>
             <?php endif; ?>
 
-            <!-- Mensajes de error o éxito -->
+
             <?php if (isset($data['error'])): ?>
                 <div class="mensaje-error">
                     <p><?= htmlspecialchars($data['error']) ?></p>
                 </div>
             <?php endif; ?>
 
-            <!-- Lista de reseñas -->
             <div class="lista-resenas">
                 <h3>Reseñas de Usuarios (<?= $data['resenas']->num_rows ?>)</h3>
                 
