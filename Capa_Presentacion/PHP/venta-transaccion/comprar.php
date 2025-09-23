@@ -13,8 +13,8 @@
     $iconos_path = $imagenes_path . 'iconos/';
     include('../../PHP/Sidebar/sidebar.php');
     include_once __DIR__ . "/../../../Capa_Datos/conexionBD/conexion.php";
-    include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDPeliculas.php";
-    include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDProductos.php";
+    include_once __DIR__ . "/../../../Capa_Negocio/Modulo-cartelera/CRUDPeliculas.php";
+    include_once __DIR__ . "/../../../Capa_Negocio/Modulo-cartelera/CRUDProductos.php";
     $peliculas = ListarPeliculasHabilitadas($conexion);
     $productos = ListarProductosDisponibles($conexion);
 ?>
