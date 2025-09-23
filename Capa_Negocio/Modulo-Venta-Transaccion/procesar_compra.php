@@ -3,14 +3,14 @@ include_once __DIR__ . "/../../Capa_Datos/conexionBD/conexion.php";
 
 if(isset($_POST['finalizar']) && isset($_POST['items'])){
     $items = $_POST['items'];
-    $idUsuario = 1; // temporal, cambiar por usuario logueado
+    $idUsuario = 1; 
     $total = 0;
 
     foreach($items as $it){
         $total += $it['precio'] * $it['cantidad'];
     }
 
-    // Insertar venta
+    
     $stmt = $conexion->prepare(
         "INSERT INTO VENTA (idUsuario, total, tipo_pago, fecha) VALUES (?, ?, ?, NOW())");
     $tipo_pago = "Efectivo";
@@ -18,12 +18,12 @@ if(isset($_POST['finalizar']) && isset($_POST['items'])){
     $stmt->execute();
     $idVenta = $stmt->insert_id;
 
-    // Insertar detalles
+    
     foreach($items as $it){
         if($it['tipo'] === "pelicula"){
             $stmt = $conexion->prepare("INSERT INTO Detalle_venta (idVenta, idPelicula, idButaca, nro_Sala, subtotal) VALUES (?, ?, ?, ?, ?)");
-            $idButaca = null; // mapear asiento real
-            $nro_Sala = 1;    // temporal
+            $idButaca = null; 
+            $nro_Sala = 1;    
             $subtotal = $it['precio'] * $it['cantidad'];
             $stmt->bind_param("iiisd", $idVenta, $it['id'], $idButaca, $nro_Sala, $subtotal);
             $stmt->execute();

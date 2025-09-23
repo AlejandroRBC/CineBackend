@@ -1,10 +1,10 @@
 <link rel="stylesheet" href="Capa_presentacion/CSS/Sidebar/sidebar.css">
-<link rel="stylesheet" href="Capa_presentacion/CSS/Inicio/card.css">
-<link rel="stylesheet" href="Capa_presentacion/CSS/Footer/footer.css">
+<link rel="stylesheet" href="Capa_presentacion/CSS/Cartelera/card.css">
+<link rel="stylesheet" href="Capa_presentacion/CSS/Venta-Transaccion/footer.css">
 <script src="Capa_presentacion/JAVASCRIPT/Sidebar/sidebar.js"></script>
 <?php 
     define("BASE_URL", "/CineBackend/");
-    include('Capa_Presentacion/HTML/Sidebar/sidebar.php');
+    include('Capa_Presentacion/PHP/Sidebar/sidebar.php');
     include_once __DIR__ . "/Capa_Datos/conexionBD/conexion.php";
     include_once __DIR__ . "/Capa_Datos/SQL/CRUDPeliculas.php";
     $peliculas = ListarPeliculasHabilitadas($conexion);
@@ -42,6 +42,6 @@
         </div>
     </div>
     <div class="contenido-cuerpo">
-        <?php include('Capa_Presentacion/HTML/Footer/footer.php'); ?>
+        <?php include('Capa_Presentacion/HTML/Venta-Transaccion/footer.html'); ?>
     </div>
 </div>

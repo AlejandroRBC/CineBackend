@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="../../CSS/Sidebar/sidebar.css">
-<link rel="stylesheet" href="../../CSS/Tablas/tablas.css">
-<link rel="stylesheet" href="../../CSS/botones.css">
-<link rel="stylesheet" href="../../CSS/Footer/footer.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/tablas.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/botones.css">
+<link rel="stylesheet" href="../../CSS/Venta-Transaccion/footer.css">
 <script src="../../JAVASCRIPT/Sidebar/sidebar.js"></script>
 <script src="../../JAVASCRIPT/venta-transaccion/carrito.js"></script>
 
 <?php
     define("BASE_URL", "/CineBackend/"); 
-    include('../../HTML/Sidebar/sidebar.php');
+    include('../../PHP/Sidebar/sidebar.php');
     include_once __DIR__ . "/../../../Capa_Datos/conexionBD/conexion.php";
     include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDPeliculas.php";
     include_once __DIR__ . "/../../../Capa_Datos/SQL/CRUDProductos.php";
@@ -100,7 +100,7 @@
     </form>
     </div>
     <div class="contenido-cuerpo">
-        <?php include('../../HTML/Footer/footer.php'); ?>
+        <?php include('../../HTML/Venta-Transaccion/footer.html'); ?>
     </div>
 
 </div>
