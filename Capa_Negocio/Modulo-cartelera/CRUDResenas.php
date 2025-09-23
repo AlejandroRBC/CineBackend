@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "../../Capa_datos/conexionBD/conexion.php";
+include "../../../Capa_datos/conexionBD/conexion.php";
 
 function ListarResenasPorPelicula($conexion, $idPelicula) {
     $sql = "SELECT r.*, u.nom_usu, u.nombre 

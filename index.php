@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="Capa_presentacion/CSS/Cartelera/card.css">
 <link rel="stylesheet" href="Capa_presentacion/CSS/Venta-Transaccion/footer.css">
 <script src="Capa_presentacion/JAVASCRIPT/Sidebar/sidebar.js"></script>
+<script src="Capa_presentacion/JAVASCRIPT/Cartelera/resenas.js"></script>
 <?php 
     define("BASE_URL", "/CineBackend/");
     include('Capa_Presentacion/PHP/Sidebar/sidebar.php');
@@ -34,7 +35,7 @@
                     </div> 
                     <div class="acciones">
                             <button type="button" onclick="Hola()" class="Enter">Informacion</button> 
-                            <button type="button" onclick="Hola()" class="Enter2">Reseñas</button> 
+                            <button type="button" onclick="verResenas(<?= $p['idPelicula'] ?>)" class="Enter2">Reseñas</button>
                     </div> 
                 </div> 
             </div>
